@@ -2,19 +2,25 @@
 <html lang="en">
 <head>
     <title>Document</title>
+    <style>
+        .color-red { color: red; }
+        .color-blue { color: blue; }
+        .is-loading { background: red; }
+    </style>
 </head>
 <body>
 
     <div id="root">
 
-        <ul>
-            <li v-for="name in names" v-text="name"></li>
-        </ul>
+        <!-- <button title="title">Hover Over Me</button>
+        <button v-bind:title="title">Hover Over Me</button> -->
+        <button :title="title">Hover Over Me</button>
 
-        <input type="text" v-model="newName">
-        <!-- <button v-on:click="addName">Add name</button> Equivalent to the next line-->
-        <button @click="addName">Add name</button>
-
+        <!-- <h1 :class="className">This is my title</h1> -->
+        
+        <button :class="{ 'is-loading': isLoading }" @click="toggleClass">Click Me</button>
+        <button :disabled="isDisabled" @click="disableButton">Disable Me</button>
+        
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -25,21 +31,23 @@
             el: '#root',
             data: {
 
-                newName: '',
-                names: ['Joe', 'Mary', 'Jane', 'Jack']
+                title: 'Now the title is being set through Javascript',
+                className: 'color-red',
+                isLoading: false,
+                isDisabled: false,
 
             },
 
             methods: {
-
-                addName() {
-                    this.names.push(this.newName);
-                    this.newName = '';
+                toggleClass() {
+                    this.isLoading = true;
+                },
+                disableButton() {
+                    this.isDisabled = true;
                 }
+            }
 
-            },
-
-        })
+        });
 
     </script>
 
