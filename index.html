@@ -10,8 +10,10 @@
 <body>
 
     <div id="root" class="container">
-        <message title="Hello World" body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem."></message>
-        <message title="Hello Universe" body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem."></message>
+        <modal v-if="showModal" @close="showModal = false">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam, facere modi? Neque illum quae blanditiis quisquam eligendi quos odio, at, provident accusantium commodi reprehenderit nisi excepturi. Omnis eum debitis laudantium!</p>
+        </modal>
+        <button @click="showModal = true">Show Modal</button>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
