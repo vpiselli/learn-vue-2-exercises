@@ -10,19 +10,12 @@
 <body>
 
     <div id="root" class="container">
-        <modal v-if="isActive" @close="isActive = false">
-            <template slot="header">My title here</template>
-            
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem facilis obcaecati ipsum odit ipsam, ratione, libero beatae accusamus possimus nobis dicta quae quod dolore perspiciatis neque? Excepturi nihil repudiandae ut?
-            
-            <div slot="footer">
-                <button class="button is-success">Save changes</button>
-                <button class="button" @click="isActive = false">Cancel</button>
+        <pregress-view inline-template>
+            <div>
+                <h1>Your progress is {{ completionRate }}%</h1>
+                <p><button @click="completionRate += 10">Update completion rate</button></p>
             </div>
-        </modal>
-
-        <button class="button is-primary" @click="isActive = true">Show Modal</button>
-
+        </pregress-view>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
