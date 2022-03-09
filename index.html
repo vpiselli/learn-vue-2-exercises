@@ -10,10 +10,22 @@
 <body>
 
     <div id="root" class="container">
-        <modal v-if="showModal" @close="showModal = false">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam, facere modi? Neque illum quae blanditiis quisquam eligendi quos odio, at, provident accusantium commodi reprehenderit nisi excepturi. Omnis eum debitis laudantium!</p>
-        </modal>
-        <button @click="showModal = true">Show Modal</button>
+
+        <tabs>
+            <tab name="Home" :selected="true">
+                <h1>Here is the content for the home tab.</h1>
+            </tab>
+            
+            <tab name="Services">
+                <h1>Here is the content for the service tab.</h1>
+            </tab>
+
+            <tab name="About Us">
+                <h1>Here is the content for the about us tab.</h1>
+            </tab>
+
+        </tabs>
+
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
