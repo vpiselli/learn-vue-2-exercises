@@ -1,53 +1,29 @@
-class Errors {
-    constructor() {
-        this.errors = {};
-    }
+import Vue from 'vue';
+import axios from 'axios';
+import Form from './core/Form';
 
-    has(field) {
-        return this.errors.hasOwnProperty(field);
-    }
-
-    any() {
-        return Object.keys(this.errors).length > 0;
-    }
-
-    get(field) {
-        if (this.errors[field]) {
-            return this.errors[field][0];
-        }
-    }
-
-    record(errors) {
-        this.errors = errors;
-    }
-
-    clear(field) {
-        if (this.errors[field]) {
-            delete(this.errors[field]);
-        }
-    }
-}
+import Example from './components/Example';
 
 new Vue({
-    el: '#app',
+	el: '#app',
 
-    data: {
-        name: '',
-        description: '',
-        errors: new Errors()
-    },
-
-    methods: {
-        onSubmit() {
-            axios.post('/projects', this.$data)
-                .then(this.onSuccess)
-                .catch(error => this.errors.record(error.response.data.errors));
-        },
-
-        onSuccess(response) {
-            alert(response.data.message);
-            this.name = '';
-            this.description = '';
-        }
-    }
+	components: {
+		Example
+	},
+	
+	data: {
+		form: new Form({
+			name: '',
+			description: ''
+		})
+	},
+	
+	methods: {
+		onSubmit() {
+			this.form.submit('post', '/projects')
+				.then(data => console.log(data))
+				.catch(errors => console.log(errors));
+		},
+		
+	}
 });
