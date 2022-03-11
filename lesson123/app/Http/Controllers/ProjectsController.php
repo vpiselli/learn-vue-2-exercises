@@ -91,4 +91,14 @@ class ProjectsController extends Controller
     {
         //
     }
+
+    /**
+     * Test method
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function test()
+    {
+        return view('projects.test');
+    }
 }

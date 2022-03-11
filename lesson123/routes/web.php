@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProjectsController::class,'create']);
 Route::post('/projects',[ProjectsController::class,'store']);
+Route::get('/test',[ProjectsController::class,'test']);
