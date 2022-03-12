@@ -22,6 +22,7 @@
 <script>
     import axios from "axios"
     import moment from "moment";
+    import Status from '../models/Status';
 
     export default {
         data() {
@@ -30,10 +31,7 @@
             }
         },
         created() {
-            axios.get('/statuses')
-                .then(response => this.statuses = response.data)
-                // .then(({data}) => this.statuses = data)  // Equivalent
-                .catch(errors => console.log(errors));
+            Status.all(statuses => this.statuses = statuses);
         }, 
 
         methods: {
