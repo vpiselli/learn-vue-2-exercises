@@ -2284,6 +2284,14 @@ __webpack_require__.r(__webpack_exports__);
       statuses: []
     };
   },
+  filters: {
+    ago: function ago(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_1___default()(date).fromNow();
+    },
+    capitalize: function capitalize(value) {
+      return value.toUpperCase();
+    }
+  },
   created: function created() {
     var _this = this;
 
@@ -2291,10 +2299,7 @@ __webpack_require__.r(__webpack_exports__);
       return _this.statuses = statuses;
     });
   },
-  methods: {
-    postedOn: function postedOn(status) {
-      return moment__WEBPACK_IMPORTED_MODULE_1___default()(status.created_at).fromNow();
-    }
+  methods: {//
   }
 });
 
@@ -42430,7 +42435,9 @@ var render = function () {
               _c("p", [
                 _vm._v(
                   "\n                        " +
-                    _vm._s(_vm.postedOn(status)) +
+                    _vm._s(
+                      _vm._f("capitalize")(_vm._f("ago")(status.created_at))
+                    ) +
                     "\n                    "
                 ),
               ]),
