@@ -10,19 +10,9 @@
 </head>
 <body>
 
-    <div id="one" class="box">
+    <div id="app" class="box">
 
-        <h1>
-            @{{ shared.user.name }}
-        </h1>
-
-    </div>
-
-    <div id="two" class="box">
-
-        <h1>
-            @{{ shared.user.name }}
-        </h1>
+        <coupon v-model="coupon"></coupon>
 
     </div>
     

@@ -1,55 +1,36 @@
 import Vue from 'vue';
-import axios from 'axios';
-import Form from './core/Form';
 
-window.Vue = require('vue');
+Vue.component('coupon', {
+	props: ['code'],
 
-// import Example from './components/Example';
+	template: `
+		<input type="text" :value="code" @input="updateCode($event.target.value)" ref="input">
+	`,
+
+	data() {
+		return {
+			invalids: ['ALLFREE', 'SOMETHINGELSE']
+		}
+	},
+
+	methods: {
+		updateCode(code) {
+			// Validation
+			if (this.invalids.includes(code)) {
+				alert('This coupon is no longer valid. Sorry!');
+				
+				this.$refs.input.value = code = '';
+			}
+
+			this.$emit('input', code)
+		}
+	}
+});
 
 new Vue({
 	el: '#app',
 
-	components: {
-		
-	},
-	
 	data: {
-		form: new Form({
-			name: '',
-			description: ''
-		})
-	},
-	
-	methods: {
-		onSubmit() {
-			this.form.submit('post', '/projects')
-				.then(data => console.log(data))
-				.catch(errors => console.log(errors));
-		},
-		
-	}
-});
-
-let store = {
-	user: {
-		name: 'Paulo Dybala'
-	}
-}
-
-new Vue({
-	el: '#one',
-
-	data: {
-		foo: 'bar',
-		shared: store
-	}
-});
-
-new Vue({
-	el: '#two',
-
-	data: {
-		foo: 'other',
-		shared: store
+		coupon: 'FREEBIE'
 	}
 });
