@@ -2210,6 +2210,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2248,8 +2250,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-// import _ from 'lodash';
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2282,19 +2283,10 @@ __webpack_require__.r(__webpack_exports__);
     this.featureTestimonial = this.testimonials[0];
   },
   methods: {
-    // updateFeatureTestimonial: _.debounce(function (testimonial) {
-    //     this.featureTestimonial = testimonial;
-    // }, 200),
-    updateFeatureTestimonial: function updateFeatureTestimonial(testimonial) {
-      var _this = this;
-
-      this.timer = setTimeout(function () {
-        _this.featureTestimonial = testimonial;
-      }, 200);
-    },
-    clearTimer: function clearTimer() {
-      clearTimeout(this.timer);
-    }
+    // updateFeatureTestimonial: _.throttle(function (testimonial) {
+    updateFeatureTestimonial: lodash__WEBPACK_IMPORTED_MODULE_0___default().debounce(function (testimonial) {
+      this.featureTestimonial = testimonial;
+    }, 200)
   }
 });
 
@@ -23866,7 +23858,6 @@ var render = function () {
                 mouseover: function ($event) {
                   return _vm.updateFeatureTestimonial(testimonial)
                 },
-                mouseout: _vm.clearTimer,
               },
             },
             [

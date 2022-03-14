@@ -8,7 +8,6 @@
                     target="_blank"
                     v-for="(testimonial, index) in testimonials"
                     @mouseover="updateFeatureTestimonial(testimonial)"
-                    @mouseout="clearTimer"
                 >
                         <img :sr="`/images/reviews/${testimonial.avatar}`"
                             :alt="testimonial.name"
@@ -38,7 +37,8 @@
 </template>
 
 <script>
-// import _ from 'lodash';
+import _ from 'lodash';
+
 export default {
     data() {
         return {
@@ -77,18 +77,10 @@ export default {
     },
 
     methods: {
-        // updateFeatureTestimonial: _.debounce(function (testimonial) {
-        //     this.featureTestimonial = testimonial;
-        // }, 200),
-        updateFeatureTestimonial(testimonial) {
-            this.timer = setTimeout(() => {
-                this.featureTestimonial = testimonial;
-            }, 200);
-        },
-
-        clearTimer() {
-            clearTimeout(this.timer);
-        }
+        // updateFeatureTestimonial: _.throttle(function (testimonial) {
+        updateFeatureTestimonial: _.debounce(function (testimonial) {
+            this.featureTestimonial = testimonial;
+        }, 200)
     }
 }
 </script>
