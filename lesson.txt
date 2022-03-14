@@ -1,4 +1,5 @@
-31: Vue Component Responsibility
-Let's take a few moments to discuss structure and responsibility, as it relates to your Vue components. Specifically, we'll review a hidden child component that is begging to be extracted.
+32: Vue Subclassing
+From time to time, you may find that components of a certain type require special functionality. Rather than copying and pasting this logic from file to file, what else might be a possibility? Well, though we could create a mixin for this purpose, let's instead opt for a dedicated subclass. In this episode, we'll use the common collection example to illustrate this workflow.
 
 No practice on this lesson. Just view the video.
+Use as reference to get a Collection Class.
