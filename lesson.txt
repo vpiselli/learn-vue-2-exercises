@@ -1,0 +1,4 @@
+31: Vue Component Responsibility
+Let's take a few moments to discuss structure and responsibility, as it relates to your Vue components. Specifically, we'll review a hidden child component that is begging to be extracted.
+
+No practice on this lesson. Just view the video.
