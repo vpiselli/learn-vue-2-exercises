@@ -1,7 +1,0 @@
-Lesson 38: Vue Portal Use Case #2
-
-No code in this lesson, just watch the video
-
-
-Let's review one more example for when you might reach for a portal. If you need a way to move a link within a Vue component file to a different part of the page, Vue portals to the rescue!
-
