@@ -5,8 +5,8 @@
                 <a class="pagination-link">Home</a>
             </router-link>
             
-            <router-link tag="li" to='/about'>
-                <a class="pagination-link">About us</a>
+            <router-link tag="li" to='/tooltips'>
+                <a class="pagination-link">Tooltips</a>
             </router-link>
             
             <router-link tag="li" to='/faq'>

@@ -6,8 +6,8 @@ let routes = [
         component: require('./views/Home').default
     },
     {
-        path: '/about',
-        component: require('./views/About').default
+        path: '/tooltips',
+        component: require('./views/Tooltip').default
     },
     {
         path: '/faq',
