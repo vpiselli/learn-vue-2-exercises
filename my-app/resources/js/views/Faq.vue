@@ -7,7 +7,7 @@
                 </div>
 
                 <div class="panel-body">
-                    <accordion :title="question.question" :body="question.answer"></accordion>
+                    <accordion :items="questions"></accordion>
                 </div>
             </div>
         </div>
@@ -21,10 +21,20 @@ export default {
 
     data() {
         return {
-            question: {
-                question: "This is my question?",
-                answer: "And this is my answer"
-            }
+            questions: [
+                {
+                    title: "This is my question 1?",
+                    body: "And this is my answer 1"
+                },
+                {
+                    title: "This is my question 2?",
+                    body: "And this is my answer 2"
+                },
+                {
+                    title: "This is my question 3?",
+                    body: "And this is my answer 3"
+                },
+            ]
         };
     },
     

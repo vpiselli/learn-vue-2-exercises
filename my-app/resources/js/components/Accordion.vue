@@ -1,28 +1,37 @@
 <template>
-    <div class="card">
-        <header class="card-header" @click="isOpen = ! isOpen">
-            <p class="card-header-title" v-text="title"></p>
-            <button class="card-header-icon" aria-label="more options">
-                <span class="icon">
-                    <i class="fas fa-angle-down" aria-hidden="true" v-if="isOpen"></i>
-                    <i class="fas fa-angle-right" aria-hidden="true" v-else></i>
-                </span>
-            </button>
-        </header>
-        <div class="card-content">
-            <div class="content" v-text="body" v-show="isOpen"></div>
-        </div>
+    <div>
+        <accordion-item
+            v-for="(item, index) in items"
+            :item="item"
+            :key="index"
+            :is-open="activeItemIndex == index"
+            @toggled="onToggle"
+        ></accordion-item>
     </div>
 </template>
 
 <script>
+import AccordionItem from './AccordionItem.vue';
+
 export default {
-    props: ['title', 'body'],
+    props: ['items'],
 
     data() {
         return {
-            isOpen: false
+            activeItemIndex: null
         };
+    },
+
+    components: { AccordionItem },
+
+    methods: {
+        onToggle(index) {
+            if (this.activeItemIndex == index) {
+                return this.activeItemIndex = null;
+            }
+            this.activeItemIndex = index
+        }
     }
-}
+
+};
 </script>
