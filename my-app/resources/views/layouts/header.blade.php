@@ -53,7 +53,9 @@
     </div>
     
     <!-- Hero footer: will stick at the bottom -->
-    <div ref="banner-meta" class="hero-foot">
-        @include('layouts.nav')
-    </div>
+    <pinned>
+        <div class="hero-foot">
+            @include('layouts.nav')
+        </div>
+    </pinned>
 </section>

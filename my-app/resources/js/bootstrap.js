@@ -7,6 +7,7 @@ import Form from './utilities/Form';
 import SeriesDropdown from './components/SeriesDropdown.vue';
 import SupportButton from './components/SupportButton.vue';
 import SupportForm from './components/SupportForm.vue';
+import Pinned from './components/Pinned.vue';
 import Swal from 'sweetalert2';
 
 window._ = require('lodash');
@@ -16,6 +17,7 @@ window.Form = Form;
 window.SeriesDropdown = SeriesDropdown;
 window.SupportButton = SupportButton;
 window.SupportForm = SupportForm;
+window.Pinned = Pinned;
 window.router = router;
 window.axios = require('axios');
 window.swal = Swal;
