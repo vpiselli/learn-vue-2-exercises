@@ -6,8 +6,11 @@
                     <div class="panel-heading">Home Page</div>
                 </div>
 
-                <div class="panel-body">
-                    I'm an example component!
+                <div class="panel-body content">
+                    Other example components:
+                    <ul>
+                        <render-example></render-example>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -15,6 +18,11 @@
 </template>
 
 <script>
+import RenderExample from '../components/RenderExample';
+import Vue from 'vue';
+
+Vue.component('render-example', RenderExample);
+
 export default {
     mounted() {
         console.log('Component mounted.')

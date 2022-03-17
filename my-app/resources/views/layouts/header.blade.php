@@ -1,4 +1,4 @@
-<section class="hero is-primary is-medium">
+<section class="hero is-info is-medium">
     <!-- Hero head: will stick at the top -->
     <div class="hero-head">
         <nav class="navbar">
@@ -54,8 +54,6 @@
     
     <!-- Hero footer: will stick at the bottom -->
     <pinned>
-        <div class="hero-foot">
-            @include('layouts.nav')
-        </div>
+        @include('layouts.nav')
     </pinned>
 </section>
