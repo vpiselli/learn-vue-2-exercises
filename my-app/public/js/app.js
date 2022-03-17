@@ -2649,9 +2649,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 var app = new Vue({
   el: '#app',
@@ -2660,7 +2665,20 @@ var app = new Vue({
     SupportButton: SupportButton,
     SupportForm: SupportForm
   },
-  router: router
+  router: router,
+  mounted: function mounted() {
+    var bar = this.$refs['banner-meta'];
+    var originalOffsetTop = bar.offsetTop;
+    window.addEventListener('scroll', (0,lodash__WEBPACK_IMPORTED_MODULE_0__.throttle)(function () {
+      console.log('I was called');
+
+      if (window.scrollY >= originalOffsetTop) {
+        bar.classList.add('is-fixed-to-top');
+      } else {
+        bar.classList.remove('is-fixed-to-top');
+      }
+    }, 300));
+  }
 });
 
 /***/ }),

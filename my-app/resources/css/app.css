@@ -1,3 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.fixed {
+    position: fixed;
+}
+.w-full {
+    width: 100%;
+}
+.pin-t {
+    top: 0;
+}
+.z-10 {
+    z-index: 10;
+}
+.bg-grey {
+    background-color: grey;
+}
+.is-fixed-to-top {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    background-color: grey;   
+}
