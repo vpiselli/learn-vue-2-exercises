@@ -8,6 +8,10 @@
             <router-link tag="li" to='/about'>
                 <a class="pagination-link">About us</a>
             </router-link>
+            
+            <router-link tag="li" to='/faq'>
+                <a class="pagination-link">Faq</a>
+            </router-link>
 
             <router-link tag="li" to='/contact'>
                 <a class="pagination-link">Contact us</a>
