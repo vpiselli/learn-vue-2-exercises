@@ -1,0 +1,4 @@
+Episode 46: Extract and Generalize: Infinite Scrolling Refactor
+
+No code for this lesson, just a video explaining Refactoring in a real project.
+Just watch the video.
