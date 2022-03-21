@@ -1,7 +1,7 @@
 <script>
 export default {
     data() {
-        return { name: "John Doe" };
+        return { name: "Render example" };
     },
 
     render(element) {

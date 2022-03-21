@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "flickity": "^3.0.0",
+        "in-viewport": "^3.6.0",
         "portal-vue": "^2.1.7",
         "sweetalert2": "^11.4.4",
         "tippy.js": "^6.3.7",
