@@ -9,9 +9,9 @@ export default {
     mounted() {
         let el = this.$el;
         let originalOffsetTop = el.offsetTop;
-        
+
         window.addEventListener(
-            'scroll', 
+            'scroll',
             throttle(function() {
                 // console.log('scrollY: ' + window.scrollY);
                 // if (window.scrollY >= originalOffsetTop) {
@@ -23,7 +23,8 @@ export default {
                 el.classList[
                     window.scrollY >= originalOffsetTop ? 'add' : 'remove'
                 ]('is-fixed-to-top');
-            }, 250)
+            }, 250),
+            { passive: true }
         );
     }
 }
