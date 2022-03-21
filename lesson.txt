@@ -1,0 +1,13 @@
+Lesson 49: Two-Way Databinding Review
+
+
+Published on Jun 17th, 2019
+If you ever find yourself desperately trying to juggle state between parent 
+and child components, ask yourself if there should instead be a single source 
+of truth. In this lesson, we'll review Vue's two-way "sync" data-binding 
+convention using a real-world example: the Laracasts codebase.
+
+
+No code for this lesson, just watch the video.
+The video explains the use of .sync directive to keep in "sync" 
+variables between parent and child components.
